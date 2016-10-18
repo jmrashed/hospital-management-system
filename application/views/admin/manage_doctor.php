@@ -1,350 +1,348 @@
 <div class="box">
 
-  <div class="box-header">
-      <!------CONTROL TABS START------->
-</div>
+    <div class="box-header">
+        <!------CONTROL TABS START------->
+    </div>
 
-	<div class="box-content padded"><div class="tab-content"><div class="tab-pane box active" id="edit" style="padding: 5px"><div class="box-content">
-	  <div class="padded">
+    <div class="box-content padded">
+        <div class="tab-content">
+            <div class="tab-pane box active" id="edit" style="padding: 5px">
+                <div class="box-content">
+                    <h2 class="page-header">Add Doctor</h2>
+                    <div class="padded" style="margin-left:100px;">
 
-                            <div class="control-group">
+                        <div class="control-group">
 
-                                <label class="control-label"><?php echo get_phrase('name');?></label>
+                            <label class="control-label"><?php echo get_phrase('name'); ?></label>
 
-                                <div class="controls">
+                            <div class="controls">
 
-                                    <input type="text" class="validate[required]" name="name" value="<?php echo $row['name'];?>"/>
-
-                                </div>
-
-                            </div>
-
-                            <div class="control-group">
-
-                                <label class="control-label"><?php echo get_phrase('email');?></label>
-
-                                <div class="controls">
-
-                                    <input type="text" class="validate[required]" name="email" value="<?php echo $row['email'];?>"/>
-
-                                </div>
+                                <input type="text" class="validate[required]" name="name" value="<?php echo $row['name']; ?>"/>
 
                             </div>
-
-                            <div class="control-group">
-
-                                <label class="control-label"><?php echo get_phrase('password');?></label>
-
-                                <div class="controls">
-
-                                    <input type="password" class="validate[required]" name="password" value="<?php echo $row['password'];?>"/>
-
-                                </div>
-
-                            </div>
-
-                            <div class="control-group">
-
-                                <label class="control-label"><?php echo get_phrase('address');?></label>
-
-                                <div class="controls">
-
-                                    <input type="text" class="" name="address" value="<?php echo $row['address'];?>"/>
-
-                                </div>
-
-                            </div>
-
-                            <div class="control-group">
-
-                                <label class="control-label"><?php echo get_phrase('phone');?></label>
-
-                                <div class="controls">
-
-                                    <input type="text" class="" name="phone" value="<?php echo $row['phone'];?>"/>
-
-                                </div>
-
-                            </div>
-
-                            <div class="control-group">
-
-                                <label class="control-label"><?php echo get_phrase('department');?></label>
-
-                                <div class="controls">
-
-                                    <select name="department_id" class="uniform" style="width:100%;">
-
-                                    	<?php 
-
-										$departments = $this->db->get('department')->result_array();
-
-										foreach($departments as $row2):
-
-										?>
-
-                                    		<option value="<?php echo $row2['department_id'];?>"
-
-                                            	<?php if($row['department_id'] == $row2['department_id'])echo 'selected';?>>
-
-													<?php echo $row2['name'];?>
-
-                                   	  </option>
-
-                                        <?php
-
-										endforeach;
-
-										?>
-
-                                    </select>
-
-                                </div>
-
-                            </div>
-
-                            <div class="control-group">
-
-                                <label class="control-label"><?php echo get_phrase('profile');?></label>
-
-                                <div class="controls">
-
-                                    <input type="text" class="" name="profile" value="<?php echo $row['profile'];?>"/>
-
-                                </div>
-
-                            </div>
-
-
-
-          </div>
-
-                        <div class="form-actions">
-
-                            <button type="submit" class="btn btn-blue"><?php echo get_phrase('edit_doctor');?></button>
 
                         </div>
 
-                    <?php echo form_close();?>
+                        <div class="control-group">
 
-                    <?php endforeach;?>
+                            <label class="control-label"><?php echo get_phrase('email'); ?></label>
+
+                            <div class="controls">
+
+                                <input type="text" class="validate[required]" name="email" value="<?php echo $row['email']; ?>"/>
+
+                            </div>
+
+                        </div>
+
+                        <div class="control-group">
+
+                            <label class="control-label"><?php echo get_phrase('password'); ?></label>
+
+                            <div class="controls">
+
+                                <input type="password" class="validate[required]" name="password" value="<?php echo $row['password']; ?>"/>
+
+                            </div>
+
+                        </div>
+
+                        <div class="control-group">
+
+                            <label class="control-label"><?php echo get_phrase('address'); ?></label>
+
+                            <div class="controls">
+
+                                <input type="text" class="" name="address" value="<?php echo $row['address']; ?>"/>
+
+                            </div>
+
+                        </div>
+
+                        <div class="control-group">
+
+                            <label class="control-label"><?php echo get_phrase('phone'); ?></label>
+
+                            <div class="controls">
+
+                                <input type="text" class="" name="phone" value="<?php echo $row['phone']; ?>"/>
+
+                            </div>
+
+                        </div>
+
+                        <div class="control-group">
+
+                            <label class="control-label"><?php echo get_phrase('department'); ?></label>
+
+                            <div class="controls">
+
+                                <select name="department_id" class="uniform" style="width:100%;">
+
+                                    <?php
+                                    $departments = $this->db->get('department')->result_array();
+
+                                    foreach ($departments as $row2):
+                                        ?>
+
+                                        <option value="<?php echo $row2['department_id']; ?>"
+
+                                                <?php if ($row['department_id'] == $row2['department_id']) echo 'selected'; ?>>
+
+                                            <?php echo $row2['name']; ?>
+
+                                        </option>
+
+                                        <?php
+                                    endforeach;
+                                    ?>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                        <div class="control-group">
+
+                            <label class="control-label"><?php echo get_phrase('profile'); ?></label>
+
+                            <div class="controls">
+
+                                <input type="text" class="" name="profile" value="<?php echo $row['profile']; ?>"/>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="form-actions">
+
+                        <button type="submit" class="btn btn-blue"><?php echo get_phrase('edit_doctor'); ?></button>
+
+                    </div>
+
+                    <?php echo form_close(); ?>
+
+
 
                 </div>
 
-			</div>
+            </div>
 
-            <?php endif;?>
 
             <!----EDITING FORM ENDS--->
 
-            
+
 
             <!----TABLE LISTING STARTS--->
 
-            <div class="tab-pane box <?php if(!isset($edit_profile))echo 'active';?>" id="list">
+            <div class="tab-pane box <?php if (!isset($edit_profile)) echo 'active'; ?>" id="list">
 
-				
+
 
                 <table cellpadding="0" cellspacing="0" border="0" class="dTable responsive">
 
-                	<thead>
-
-                		<tr>
-
-                    		<th><div>#</div></th>
-
-                    		<th><div><?php echo get_phrase('doctor_name');?></div></th>
-
-                    		<th><div><?php echo get_phrase('department');?></div></th>
-
-                    		<th><div><?php echo get_phrase('options');?></div></th>
-
-						</tr>
-
-					</thead>
-
-                    <tbody>
-
-                    	<?php $count = 1;foreach($doctors as $row):?>
+                    <thead>
 
                         <tr>
 
-                            <td><?php echo $count++;?></td>
+                            <th><div>#</div></th>
 
-							<td><?php echo $row['name'];?></td>
+                            <th><div><?php echo get_phrase('doctor_name'); ?></div></th>
 
-							<td><?php echo $this->crud_model->get_type_name_by_id('department',$row['department_id']);?></td>
+                            <th><div><?php echo get_phrase('department'); ?></div></th>
 
-							<td align="center">
-
-                            	<a href="<?php echo base_url();?>index.php?admin/manage_doctor/edit/<?php echo $row['doctor_id'];?>"
-
-                                	rel="tooltip" data-placement="top" data-original-title="<?php echo get_phrase('edit');?>" class="btn btn-blue">
-
-                                		<i class="icon-wrench"></i>
-
-                                </a>
-
-                            	<a href="<?php echo base_url();?>index.php?admin/manage_doctor/delete/<?php echo $row['doctor_id'];?>" onclick="return confirm('delete?')"
-
-                                	rel="tooltip" data-placement="top" data-original-title="<?php echo get_phrase('delete');?>" class="btn btn-red">
-
-                                		<i class="icon-trash"></i>
-
-                                </a>
-
-        					</td>
+                            <th><div><?php echo get_phrase('options'); ?></div></th>
 
                         </tr>
 
-                        <?php endforeach;?>
+                    </thead>
+
+                    <tbody>
+
+                        <?php
+                        $count = 1;
+                        foreach ($doctors as $row):
+                            ?>
+
+                            <tr>
+
+                                <td><?php echo $count++; ?></td>
+
+                                <td><?php echo $row['name']; ?></td>
+
+                                <td><?php echo $this->crud_model->get_type_name_by_id('department', $row['department_id']); ?></td>
+
+                                <td align="center">
+
+                                    <a href="<?php echo base_url(); ?>index.php?admin/manage_doctor/edit/<?php echo $row['doctor_id']; ?>"
+
+                                       rel="tooltip" data-placement="top" data-original-title="<?php echo get_phrase('edit'); ?>" class="btn btn-blue">
+
+                                        <i class="icon-wrench"></i>
+
+                                    </a>
+
+                                    <a href="<?php echo base_url(); ?>index.php?admin/manage_doctor/delete/<?php echo $row['doctor_id']; ?>" onclick="return confirm('delete?')"
+
+                                       rel="tooltip" data-placement="top" data-original-title="<?php echo get_phrase('delete'); ?>" class="btn btn-red">
+
+                                        <i class="icon-trash"></i>
+
+                                    </a>
+
+                                </td>
+
+                            </tr>
+
+                        <?php endforeach; ?>
 
                     </tbody>
 
                 </table>
 
-			</div>
+            </div>
 
             <!----TABLE LISTING ENDS--->
 
-            
 
-            
 
-			<!----CREATION FORM STARTS---->
 
-			<div class="tab-pane box" id="add" style="padding: 5px">
+
+            <!----CREATION FORM STARTS---->
+
+            <div class="tab-pane box" id="add" style="padding: 5px">
 
                 <div class="box-content">
 
-                    <?php echo form_open('admin/manage_doctor/create/' , array('class' => 'form-horizontal validatable'));?>
+                    <?php echo form_open('admin/manage_doctor/create/', array('class' => 'form-horizontal validatable')); ?>
 
-                        <div class="padded">
+                    <div class="padded">
 
-                            <div class="control-group">
+                        <div class="control-group">
 
-                                <label class="control-label"><?php echo get_phrase('name');?></label>
+                            <label class="control-label"><?php echo get_phrase('name'); ?></label>
 
-                                <div class="controls">
+                            <div class="controls">
 
-                                    <input type="text" class="validate[required]" name="name"/>
-
-                                </div>
+                                <input type="text" class="validate[required]" name="name"/>
 
                             </div>
 
-                            <div class="control-group">
+                        </div>
 
-                                <label class="control-label"><?php echo get_phrase('email');?></label>
+                        <div class="control-group">
 
-                                <div class="controls">
+                            <label class="control-label"><?php echo get_phrase('email'); ?></label>
 
-                                    <input type="text" class="validate[required]" name="email"/>
+                            <div class="controls">
 
-                                </div>
-
-                            </div>
-
-                            <div class="control-group">
-
-                                <label class="control-label"><?php echo get_phrase('password');?></label>
-
-                                <div class="controls">
-
-                                    <input type="password" class="validate[required]" name="password"/>
-
-                                </div>
+                                <input type="text" class="validate[required]" name="email"/>
 
                             </div>
 
-                            <div class="control-group">
+                        </div>
 
-                                <label class="control-label"><?php echo get_phrase('address');?></label>
+                        <div class="control-group">
 
-                                <div class="controls">
+                            <label class="control-label"><?php echo get_phrase('password'); ?></label>
 
-                                    <input type="text" class="" name="address"/>
+                            <div class="controls">
 
-                                </div>
-
-                            </div>
-
-                            <div class="control-group">
-
-                                <label class="control-label"><?php echo get_phrase('phone');?></label>
-
-                                <div class="controls">
-
-                                    <input type="text" class="" name="phone"/>
-
-                                </div>
+                                <input type="password" class="validate[required]" name="password"/>
 
                             </div>
 
-                            <div class="control-group">
+                        </div>
 
-                                <label class="control-label"><?php echo get_phrase('department');?></label>
+                        <div class="control-group">
 
-                                <div class="controls">
+                            <label class="control-label"><?php echo get_phrase('address'); ?></label>
 
-                                    <select name="department_id" class="uniform" style="width:100%;">
+                            <div class="controls">
 
-                                    	<?php 
+                                <input type="text" class="" name="address"/>
 
-										$departments = $this->db->get('department')->result_array();
+                            </div>
 
-										foreach($departments as $row):
+                        </div>
 
-										?>
+                        <div class="control-group">
 
-                                    		<option value="<?php echo $row['department_id'];?>"><?php echo $row['name'];?></option>
+                            <label class="control-label"><?php echo get_phrase('phone'); ?></label>
+
+                            <div class="controls">
+
+                                <input type="text" class="" name="phone"/>
+
+                            </div>
+
+                        </div>
+
+                        <div class="control-group">
+
+                            <label class="control-label"><?php echo get_phrase('department'); ?></label>
+
+                            <div class="controls">
+
+                                <select name="department_id" class="uniform" style="width:100%;">
+
+                                    <?php
+                                    $departments = $this->db->get('department')->result_array();
+
+                                    foreach ($departments as $row):
+                                        ?>
+
+                                        <option value="<?php echo $row['department_id']; ?>"><?php echo $row['name']; ?></option>
 
                                         <?php
+                                    endforeach;
+                                    ?>
 
-										endforeach;
-
-										?>
-
-                                    </select>
-
-                                </div>
+                                </select>
 
                             </div>
 
-                            <div class="control-group">
+                        </div>
 
-                                <label class="control-label"><?php echo get_phrase('profile');?></label>
+                        <div class="control-group">
 
-                                <div class="controls">
+                            <label class="control-label"><?php echo get_phrase('profile'); ?></label>
 
-                                    <input type="text" class="" name="profile"/>
+                            <div class="controls">
 
-                                </div>
+                                <input type="text" class="" name="profile"/>
 
                             </div>
 
-
-
                         </div>
 
-                        <div class="form-actions">
 
-                            <button type="submit" class="btn btn-blue"><?php echo get_phrase('add_doctor');?></button>
 
-                        </div>
+                    </div>
 
-                    <?php echo form_close();?>                
+                    <div class="form-actions">
+
+                        <button type="submit" class="btn btn-blue"><?php echo get_phrase('add_doctor'); ?></button>
+
+                    </div>
+
+                    <?php echo form_close(); ?>                
 
                 </div>                
 
-			</div>
+            </div>
 
-			<!----CREATION FORM ENDS--->
+            <!----CREATION FORM ENDS--->
 
-            
 
-		</div>
 
-  </div>
+        </div>
+
+    </div>
 
 </div>

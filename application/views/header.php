@@ -4,7 +4,7 @@
 
 		<div class="container-fluid">
 
-			<a class="brand" href="<?php echo base_url();?>"> <?php //echo $system_name;?> Hospital Management System
+			<a class="brand" href="<?php echo base_url();?>"> <?php echo $system_name;?> 
 
 			</a>
 

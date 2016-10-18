@@ -75,15 +75,11 @@
                         </div>
 
                     <?php echo form_close();?>
-
-                    <?php endforeach;?>
-
+ 
                 </div>
 
 			</div>
-
-            <?php endif;?>
-
+ 
             <!----EDITING FORM ENDS--->
 
             
